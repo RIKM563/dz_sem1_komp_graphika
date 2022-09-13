@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<HTML>
+		<BODY>
+			<canvas id='lesson01' width='2000' height='1200'/>
+			<script>
+				let canvas = document.getElementById("lesson01");
+				let context = canvas.getContext("2d");
+
+
+                                var x = 10;
+                                var y = 15;
+				function draw() {
+                                        context.clearRect(0,0, canvas.width, canvas.height);
+                                        context.strokeStyle = "#85c200";
+                                        context.lineWidth = 6;
+                                        context.beginPath();
+                                        context.moveTo(x, y);
+                                        context.bezierCurveTo(x+30, y+25, x+90, y+5, x+130, y+75);
+                                        context.quadraticCurveTo(x+30, y+135, x, y);
+                                        context.closePath();
+                                        context.stroke();
+                                        context.strokeStyle = "#85c200";
+                                        context.lineWidth = 3;
+                                        context.beginPath();
+                                        context.moveTo(x, y);
+                                        context.bezierCurveTo(x+30, y+75, x+80, y+35, x+130, y+75);
+                                        context.closePath();
+                                        context.stroke();
+                                      
+                                        y+=5;
+                                        x+=30;
+                                        y+=8;
+                                        x+=30;
+                                        y-=5;
+                                        x+=30;
+                                        y-=10;
+                                        x+=30;
+                                        y+=15;
+                                        x-=30;
+                                        y+=10;
+                                        x-=30;
+                                        y+=10;
+                                        x-=30;
+
+					setTimeout("draw()", 20000000);
+				}
+
+				setInterval(draw, 100);
+
+			</script>
+		</BODY>
+</HTML>
